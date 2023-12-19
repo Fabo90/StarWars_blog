@@ -80,7 +80,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 					}
 
 					const store = getStore();
-					store.favorite.push(data.name);
+					if (!store.favorite.includes(data.name)) {
+						store.favorite.push(data.name);
+					};
 					setStore({ favorite: store.favorite })
 				} catch (error) {
 					console.log(error);
@@ -97,7 +99,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 					}
 
 					const store = getStore();
-					store.favorite.push(data.name);
+					if (!store.favorite.includes(data.name)) {
+						store.favorite.push(data.name);
+					};
 					setStore({ favorite: store.favorite })
 				} catch (error) {
 					console.log(error);
